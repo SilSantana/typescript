@@ -6,7 +6,4 @@ export class View {
         const template = this.template(model);
         this.elemento.innerHTML = template;
     }
-    template(model) {
-        throw Error('Must be implemented in the inheritance!');
-    }
 }
