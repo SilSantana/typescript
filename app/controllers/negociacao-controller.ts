@@ -51,6 +51,7 @@ export class Negociacaocontroller {
     }
 
     private atualizaView() : void {
+        /*  Um cometario esquecido*/
         this.negociacoesView.update(this.negociacoes); 
         this.mensagemView.update('Negociação adicionada com sucesso');
     }
