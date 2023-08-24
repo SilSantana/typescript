@@ -4,7 +4,13 @@ export abstract class View<T> {
     private escapar = false;
      
     constructor(seletor: string, escapar?: boolean) {
-        this.elemento = document.querySelector(seletor);
+        const elementoTemp = document.querySelector(seletor);
+        if (elementoTemp) {
+            this.elemento = elementoTemp as HTMLElement;
+        }else{
+            throw Error(`Selector ${seletor} not found in DOM! Verify!`);
+        }
+        
         if (escapar){
             this.escapar = escapar;
         }

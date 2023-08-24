@@ -1,7 +1,13 @@
 export class View {
     constructor(seletor, escapar) {
         this.escapar = false;
-        this.elemento = document.querySelector(seletor);
+        const elementoTemp = document.querySelector(seletor);
+        if (elementoTemp) {
+            this.elemento = elementoTemp;
+        }
+        else {
+            throw Error(`Selector ${seletor} not found in DOM! Verify!`);
+        }
         if (escapar) {
             this.escapar = escapar;
         }
