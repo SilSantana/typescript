@@ -11,3 +11,14 @@ if (form) {
 }else{
     throw Error("It can not possible to load the app! Sorry!");
 }
+
+
+const btnImportar = document.querySelector('#btn-import');
+if (btnImportar){
+    btnImportar.addEventListener('click', () => {
+        controller.importarDados();
+    });
+
+}else {
+    throw Error("Button Import not found!");
+}

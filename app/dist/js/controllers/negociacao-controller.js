@@ -29,6 +29,22 @@ export class Negociacaocontroller {
         this.atualizaView();
         this.limparFormulario();
     }
+    importarDados() {
+        alert('Teste Importar vai consumir api');
+        fetch('http://localhost:8080/dados')
+            .then(resp => resp.json())
+            .then((dados) => {
+            return dados.map(item => {
+                return new Negociacao(new Date(), item.vezes, item.montante);
+            });
+        })
+            .then(todayNegociation => {
+            for (let negociacao of todayNegociation) {
+                this.negociacoes.adiciona(negociacao);
+            }
+            this.negociacoesView.update(this.negociacoes);
+        });
+    }
     ehDiaUtil(data) {
         return data.getDay() > DiasDaSemana.DOMINGO && data.getDay() < DiasDaSemana.SABADO;
     }
