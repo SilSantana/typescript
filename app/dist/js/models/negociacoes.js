@@ -11,4 +11,7 @@ export class Negociacoes {
     toString() {
         return JSON.stringify(this.negociacoes, null, 2);
     }
+    equals(objeto) {
+        return JSON.stringify(this.negociacoes) === JSON.stringify(objeto.lista());
+    }
 }
