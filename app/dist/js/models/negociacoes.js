@@ -1,5 +1,7 @@
-export class Negociacoes {
+import { Printable } from "../uteis/printable.js";
+export class Negociacoes extends Printable {
     constructor() {
+        super(...arguments);
         this.negociacoes = [];
     }
     adiciona(negociacao) {
