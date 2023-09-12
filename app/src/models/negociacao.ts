@@ -30,4 +30,12 @@ export class Negociacao {
         );
     }
 
+    public toString(): string {
+        return `
+        Data: ${this.data},
+        Quantidade: ${this.quantidade},
+        Valor: ${this.valor}   
+        `;
+    }
+
 }

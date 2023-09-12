@@ -40,7 +40,9 @@ export class Negociacaocontroller {
             return ;
         }  
         
-        this.negociacoes.adiciona(negociacao);
+        this.negociacoes.adiciona(negociacao);     
+        console.log(negociacao.toString());
+        console.log(this.negociacoes.toString());
         this.atualizaView();
         this.limparFormulario();
     }
