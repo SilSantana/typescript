@@ -30,7 +30,6 @@ export class Negociacaocontroller {
         this.limparFormulario();
     }
     importarDados() {
-        alert('Teste Importar vai consumir api');
         fetch('http://localhost:8080/dados')
             .then(resp => resp.json())
             .then((dados) => {

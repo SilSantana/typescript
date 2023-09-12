@@ -18,7 +18,6 @@ if (btnImportar){
     btnImportar.addEventListener('click', () => {
         controller.importarDados();
     });
-
 }else {
     throw Error("Button Import not found!");
 }

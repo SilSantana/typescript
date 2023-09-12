@@ -2,6 +2,7 @@ import { domInjector } from "../decorators/dom-injector.js";
 import { inspect } from "../decorators/inspect.js";
 import { logarTempoExecucao } from "../decorators/logar-tempo-execucao.js";
 import { DiasDaSemana } from "../enuns/DiasDaSemanaEnum.js";
+import { NegociacoesDoDia } from "../interfaces/negociacao-dia.js";
 import { Negociacao } from "../models/negociacao.js";
 import { Negociacoes } from "../models/negociacoes.js";
 import { MensagemView } from "../views/mensagem-view.js";
@@ -44,12 +45,10 @@ export class Negociacaocontroller {
         this.limparFormulario();
     }
 
-    public importarDados(): void{
-        alert('Teste Importar vai consumir api');
-
+    public importarDados(): void {
         fetch('http://localhost:8080/dados')
         .then( resp => resp.json())
-        .then((dados: any[]) => {
+        .then((dados: NegociacoesDoDia[]) => {
            return dados.map( item => {
                 return new Negociacao(new Date(), item.vezes, item.montante)
             })
