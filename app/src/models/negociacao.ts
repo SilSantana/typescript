@@ -1,13 +1,12 @@
 import { Printable } from "../uteis/printable.js";
 
-export class Negociacao extends Printable {
+export class Negociacao implements Printable {
 
     constructor(
         private _data: Date, 
         public readonly quantidade: number, 
         public readonly valor: number) 
-    {
-        super(); // para carregar o construtor da classe extendida
+    {        
      }
 
     get data() {
