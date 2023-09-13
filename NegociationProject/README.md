@@ -1,4 +1,4 @@
-# typescript
+# Negociation Project - Typescript
 
 Projeto com apenas uma view que permite adicionar uma negociação e importar negociações provenientes do consumo de uma api.
 
@@ -6,7 +6,7 @@ Projeto com apenas uma view que permite adicionar uma negociação e importar ne
 
 No diretório NegociationProject execute o comando:
 
-Npm run start
+npm run start
 
 
 ## Como executar o projeto da api
