@@ -14,7 +14,37 @@ elementoFormulario.addEventListener("submit", function (event) {
     if (!elementoFormulario.checkValidity()) {
         alert("Por favor, preencha todos os campos da transação!");
         return;
-}
+    }
+
+    const inputTipoTransacao = elementoFormulario.querySelector("#tipoTransacao");
+    const inputValor = elementoFormulario.querySelector("#valor");
+    const inputData = elementoFormulario.querySelector("#data");
+
+    let tipoTransacao =  inputTipoTransacao.value;
+    let valor = inputValor.value;
+    let data = inputData.value;
+       
+    //Atualizando saldo da conta
+    if (tipoTransacao == "Depósito") {
+        saldoDaConta += valor;
+    }else if (tipoTransacao == "Transferência" || tipoTransacao == "Pagamento de Boleto") {
+        saldoDaConta -= valor;
+    }else {
+        alert("Tipo de Transação é inválido!");
+        return;
+    }
+
+    const novaTransacao = {
+        tipoTransacao: tipoTransacao,
+        valor: valor,
+        data: data,
+        isNova: true
+    }
+   
+    elementoSaldo.textContent = saldoDaConta; 
+    
+    console.log(novaTransacao);
+    elementoFormulario.reset();
 });
 
 
